@@ -11,6 +11,7 @@ class FileRecordsController < ApplicationController
   # GET /file_records/1.json
   def show
     @file_record = FileRecord.find(params[:id])
+    @step = Step.new
   end
 
   # GET /file_records/new
@@ -20,13 +21,14 @@ class FileRecordsController < ApplicationController
 
   # GET /file_records/1/edit
   def edit
-    @file_record = FileRecord.new
+    @file_record = FileRecord.find(params[:id])
   end
 
   # POST /file_records
   # POST /file_records.json
   def create
     @file_record = FileRecord.new(file_record_params)
+    @office = Office.where(name: "Mesa de Entrada").first!
 
     respond_to do |format|
       if @file_record.save
@@ -62,6 +64,8 @@ class FileRecordsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.

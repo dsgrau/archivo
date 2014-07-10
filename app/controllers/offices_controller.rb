@@ -10,6 +10,7 @@ class OfficesController < ApplicationController
   # GET /offices/1
   # GET /offices/1.json
   def show
+    @office = Office.find(params[:id])
   end
 
   # GET /offices/new
@@ -19,6 +20,7 @@ class OfficesController < ApplicationController
 
   # GET /offices/1/edit
   def edit
+    @office = Office.find(params[:id])
   end
 
   # POST /offices
