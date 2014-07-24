@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :steps
 
   resources :people
@@ -9,6 +10,8 @@ Rails.application.routes.draw do
     resources :steps
     post 'archivate'
   end
+
+  root to: "file_records#index" 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
