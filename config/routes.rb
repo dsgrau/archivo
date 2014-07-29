@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
+
+  namespace :backend do
+    resources :offices
+    resources :file_recrods
+    resources :people 
+  end
+
   devise_for :users
+  
   resources :steps
 
   resources :people
