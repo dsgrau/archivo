@@ -42,3 +42,10 @@ gem 'inherited_resources'
 
 gem 'devise'
 
+gem 'rails_backend', github: 'bluelemons/rails_backend', branch: 'bootstrap3'
+gem 'will_paginate'
+gem 'ransack'
+gem 'less-rails-bootstrap'
+
+gem 'simple_form'
+
