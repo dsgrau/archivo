@@ -28,8 +28,12 @@ class StepsController < ApplicationController
 
     respond_to do |format|
       if @step.save
-        format.html { redirect_to @step, notice: 'Step was successfully created.' }
-        format.json { render :show, status: :created, location: @step }
+        if @step.person.completed?
+          format.html { redirect_to @step, notice: 'Step was successfully created.' }
+          format.json { render :show, status: :created, location: @step }
+        else
+          format.html { redirect_to edit_person_path(@step.person) }
+        end
       else
         format.html { render :new }
         format.json { render json: @step.errors, status: :unprocessable_entity }
