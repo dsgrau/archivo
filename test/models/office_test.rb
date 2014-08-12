@@ -1,7 +1,10 @@
 require 'test_helper'
 
 class OfficeTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+  test 'Mesa de entrada' do
+    office = Office.start_office
+    assert office.class == Office
+  end
+
 end
