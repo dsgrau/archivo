@@ -49,3 +49,7 @@ gem 'less-rails-bootstrap'
 
 gem 'simple_form'
 
+gem 'pry'
+
+gem 'doorkeeper'
+
