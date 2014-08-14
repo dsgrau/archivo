@@ -3,3 +3,9 @@
 incompleto:
   name:
   dni: 
+  email: incompleto@mail.com
+
+completo:
+  name: emmet
+  dni: 12345678
+  email: emmet@mail.com
