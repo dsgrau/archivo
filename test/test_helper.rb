@@ -15,4 +15,6 @@ end
 
 class ActionController::TestCase
   include Devise::TestHelpers
+  include Warden::Test::Helpers
+  Warden.test_mode!
 end
